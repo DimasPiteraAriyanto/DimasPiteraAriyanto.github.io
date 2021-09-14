@@ -28,6 +28,9 @@ global style
 /*--
  define custom css variables
 --*/
+/* Scrolling smooth */
+*{scroll-behavior: smooth;}
+/*end*/
 
 body{
     font-size: 16px;

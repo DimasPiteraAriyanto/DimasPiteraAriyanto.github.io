@@ -58,7 +58,7 @@ function bodyScrollingToggle(){
                 slideIndex = 0;
                 popupToggle();
                 popupSlideshow();
-                 
+                popupDetails();
             }
     })
 
@@ -113,15 +113,12 @@ function bodyScrollingToggle(){
         if(portfolioItems[itemIndex].querySelector(".portfolio-item-details")){
             projectDetailsBtn.style.display = "none";
             return; //end function
-        }projectDetailsBtn.style.display = "block";
+        }//projectDetailsBtn.style.display = "none";
         //get the project details
-        const details = portfolioItems[itemIndex].querySelector(".portfolio-item-details").innerHTML;
-        popup.querySelector(".pp-project-details").innerHTML = details;
-        const title = portfolioItems[itemIndex].querySelector(".portfolio-item-title").innerHTML;
-        popup.querySelector(".pp-title h2").innerHTML = title; 
-        const category = portfolioItems[itemIndex].querySelector(".portfolio-item-title").innerHTML;
-        popup.querySelector(".pp-project-category").innerHTML = category.split("-").join(" "); 
-        
+        const details = portfolioItems[itemIndex].querySelector(".portfolio-item-details").innerHTML;popup.querySelector(".pp-project-details").innerHTML = details;
+        const title = portfolioItems[itemIndex].querySelector(".portfolio-item-title").innerHTML;popup.querySelector(".pp-title h2").innerHTML = title; 
+        const category = portfolioItems[itemIndex].getAttribute("data-category");popup.querySelector(".pp-project-category").innerHTML = category.split("-").join(" "); 
+
     }
 
     projectDetailsBtn.addEventListener("click", () =>{
